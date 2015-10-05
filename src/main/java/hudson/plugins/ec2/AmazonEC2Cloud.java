@@ -96,7 +96,11 @@ public class AmazonEC2Cloud extends EC2Cloud {
 
     public static URL getEc2EndpointUrl(String region) {
         try {
-            return new URL("https://" + region + "." + EC2_URL_HOST + "/");
+            // eu-central-1 has a different API endpoint than the other regions
+            if (EC2_EU_CENTRAL_1.equals(region)) {
+                return new URL("https://" + EC2_HOST_PREFIX + "." + region + "." + AWS_HOST + "/");
+            }
+            return new URL("https://" + region + "." + EC2_HOST_PREFIX + "." + AWS_HOST + "/");
         } catch (MalformedURLException e) {
             throw new Error(e); // Impossible
         }

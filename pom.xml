@@ -81,9 +81,9 @@ THE SOFTWARE.
       <version>140</version>
     </dependency>
   	<dependency>
-	  <groupId>org.jenkins-ci.plugins</groupId>
+	  <groupId>com.amazonaws</groupId>
 	  <artifactId>aws-java-sdk</artifactId>
-	  <version>1.10.16</version>
+	  <version>1.10.22</version>
 	</dependency>
   	<dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
